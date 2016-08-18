@@ -1,0 +1,48 @@
+
+<div style="text-align: center;">Este es un ejemplo de validaci&oacute;n en AngularJs.</div>
+
+<div style="text-align: center;">Este input posee cinco validaciones:</div>
+<br>
+<ul>
+	<li>Required</li>
+	<li>Minlength de 2 caracteres</li>
+	<li>Maxlength de 4 caracteres</li>
+	<li>Un pattern de precio</li>
+	<li>Una validacion custom, el valor tiene que ser menor que 1000</li>
+</ul>
+<br>
+<form
+	name="form"
+	novalidate>
+
+	<div
+		class="form-group has-feedback"
+		style="max-width: 254px;margin: auto;"
+		ng-class="{'has-success' : successPrecio(), 'has-error' : errorPrecio() || cantidadInvalida}">
+		
+		<label>Precio</label>
+
+		<input
+			name="cantidad"
+			value="{{cantidad}}"
+			class="form-control"
+			ng-model="cantidad"
+			ng-keyup="validarCantidadMaxima(cantidad)"
+			ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+			ng-maxlength="4"
+			ng-minlength="2"
+			required> 
+
+		<span
+			class="glyphicon form-control-feedback"
+			ng-class="{'glyphicon-ok' : successPrecio(), 'glyphicon-remove' : errorPrecio() || cantidadInvalida}"></span>
+	</div>
+
+	<div
+		ng-messages="form.cantidad.$error"
+		ng-if="form.cantidad.$touched">
+
+		<div ng-include="'messages.html'"></div>
+	</div>
+
+</form>

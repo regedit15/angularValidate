@@ -1,0 +1,95 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%
+}
+
+.titulo {
+	margin-bottom: 2px;
+}
+
+.input {
+	width: 150px;
+}
+
+.precio {
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+input {
+	text-align: center;
+}
+
+.navbar-brand {
+	margin-left: 0px !important;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: auto;
+}
+
+#divVerde {
+	max-width: 142px;
+	min-height: 35px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#grilla {
+	padding: 0px;
+}
+
+.acercaDe {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#contenedor {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.morado {
+	border-radius: 6px;
+	background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+	width: 245px;
+	height: 105px;
+	margin: auto;
+}
+
+.form-group {
+	margin-bottom: 0px !important;
+}
+
+.powerBy {
+	box-sizing: border-box;
+	color: rgb(255, 255, 255);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 23px;
+	text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.version {
+	box-sizing: border-box;
+	color: rgb(205, 191, 227);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+	text-align: center;
+}
+
+.glyphicon {
+	margin-right: 5px;
+}
+
+.msjError {
+	color: red;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Responsibidad Bootstrap-->
+	<meta
+	name="format-detection"
+	content="telephone=no" />
+	<meta
+	name="msapplication-tap-highlight"
+	content="no" />
+	<meta
+	name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="css/index.css">
+
+	<!-- Bootstrap -->
+
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+
+
+	<title>Validaciones</title>
+
+	<link
+	href='img/icon.png?1.2'
+	rel='shortcut icon'
+	type='image/png' />
+	
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="validaciones" ng-controller="mainController">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a
+				class="navbar-brand"
+				href=""
+				ng-click="volver()">Validaciones</a>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div id="contenedor">
+
+		<div class="acercaDe">
+
+		
+				
+		
+
+			<div style="margin: auto; margin-top: 50px; display: table;">
+
+				<div ui-view></div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- jquery -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Angularjs -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+
+	<!-- Main -->
+	<script src="js/app.js"></script>
+
+	<!-- Controladores -->
+	<script src="js/controllers/mainController.js"></script>
+
+	<!-- Rutas -->
+	<script src="js/routes/route.js"></script>
+
+</body>
+
+</html>
