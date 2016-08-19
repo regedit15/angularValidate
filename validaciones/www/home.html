@@ -46,4 +46,11 @@
 		<div ng-include="'messages.html'"></div>
 	</div>
 
+
+	<button type="submit" ng-click="guardar()"
+		ng-disabled="errorPrecio()"
+		class="btn btn-success botonGuardar">
+		<i class="fa fa-check fa-fw"></i> Guardar
+	</button>
+
 </form>

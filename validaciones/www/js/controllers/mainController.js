@@ -17,12 +17,19 @@ app.controller('mainController', [ '$scope', '$state',
             $scope.cantidadInvalida = cantidad >= 1000;
         }
 
+
+        $scope.guardar = function() {
+          alert('submit!');
+         }
+
         $scope.volver = function(cantidad) {
          if($state.current.name === 'inicio'){
             $state.go('acercaDe');
          }else{
             $state.go('inicio');
          }
+
+         
      }
 
  }]);
