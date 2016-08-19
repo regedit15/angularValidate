@@ -94,8 +94,8 @@ input {
 	color: red;
 }
 
-.botonGuardar{
-margin-left: auto;
-    display: -webkit-box !important;
-    margin-top: 17px;
+.botonGuardar {
+	margin-left: auto;
+	display: -webkit-box !important;
+	margin-top: 17px;
 }

@@ -1,21 +1,11 @@
-
-
 <div>
-	<div>
-		<!-- 222errordirective: {{error}} -->
 
+	<div ng-if="mostrarMinlength" class="msjError">Numero muy chico2
 	</div>
 
-<div ng-if="mostrarMinlength()" class="msjError">
-	Numero muy chico
-</div>
+	<div ng-if="mostrarMaxlength" class="msjError">Numero muy
+		grande</div>
 
-<div ng-if="mostrarMaxlength()" class="msjError">
-	Numero muy grande
-</div>
-
-<div ng-if="mostrarPattern()" class="msjError">
-	Pattern no correcto
-</div>
+	<div ng-if="mostrarPattern" class="msjError">Pattern incorrecto</div>
 
 </div>

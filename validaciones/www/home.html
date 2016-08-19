@@ -1,87 +1,51 @@
 
-<div style="text-align: center;">Este es un ejemplo de validaci&oacute;n en AngularJs.</div>
+<div style="text-align: center;">Este es un ejemplo de
+	validaci&oacute;n en AngularJs.</div>
 
-<div style="text-align: center;">Este input posee cinco validaciones:</div>
+<div style="text-align: center;">Este input posee cinco
+	validaciones:</div>
 <br>
 <ul>
 	<li>Required</li>
 	<li>Minlength de 2 caracteres</li>
 	<li>Maxlength de 4 caracteres</li>
-	<li>Un pattern de precio</li>
-	<li>Una validacion custom, el valor tiene que ser menor que 1000</li>
+	<li>Un pattern de numeros. Ej: 125.99</li>
 </ul>
 <br>
 <form
 	name="form"
 	novalidate>
 
+
 	<div
 		class="form-group has-feedback"
-		style="max-width: 254px;margin: auto;"
-		ng-class="{'has-success' : successPrecio(), 'has-error' : errorPrecio()}">
-		
-		<label>Precio</label>
+		style="max-width: 254px; margin: auto;"
+		ng-class="{'has-success' :  hayError == 1, 'has-error' : hayError == -1}">
 
-		<input
-			name="cantidad"
-			value="{{cantidad}}"
+		<label>Precio</label> <input
+			name="numero"
 			class="form-control"
-			ng-model="cantidad"
-			ng-keyup="validarCantidadMaxima(cantidad)"
-			ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
-			ng-maxlength="4"
-			ng-minlength="2"
-			required> 
-
-		<span
+			ng-model="numero"> <span
 			class="glyphicon form-control-feedback"
-			ng-class="{'glyphicon-ok' : successPrecio(), 'glyphicon-remove' : errorPrecio()}"></span>
+			ng-class="{'glyphicon-ok' : hayError == 1, 'glyphicon-remove' :  hayError == -1}"></span>
 	</div>
 
-	<div
-		style="max-width: 254px;margin: auto;"
-		ng-messages="form.cantidad.$error"
-		ng-if="form.cantidad.$touched || form.cantidad.$dirty">
-
-		<div ng-include="'messages.html'"></div>
+	<div style="max-width: 254px; margin: auto;">
+		<validacion
+			valor="numero"
+			minlength="3"
+			maxlength="6"
+			pattern="^[0-9]+(\.[0-9]{1,2})?$"
+			error="hayError"></validacion>
 	</div>
 
-
-	<button type="submit" ng-click="guardar()"
-		ng-disabled="errorPrecio()"
+	<button
+		type="submit"
+		ng-click="guardar()"
+		ng-disabled="hayError == -1 || hayError == 0 "
 		class="btn btn-success botonGuardar">
 		<i class="fa fa-check fa-fw"></i> Guardar
 	</button>
-
-<br>
-<br>
-<br>
-
-<div> hayError: {{hayError}}</div>
-
-	<div
-		class="form-group has-feedback"
-		style="max-width: 254px;margin: auto;"
-		ng-class="{'has-success' : hayError == false, 'has-error' : hayError}">
-		
-		<label>Precio</label>
-
-		<input
-			name="numero"
-			class="form-control"
-			ng-model="numero"
-			> 
-
-				<span
-			class="glyphicon form-control-feedback"
-			ng-class="{'glyphicon-ok' : hayError == false, 'glyphicon-remove' : hayError}"></span>
-	</div>
-
-	<validacion valor="numero" minlength="3" maxlength="6" pattern="^[0-9]+(\.[0-9]{1,2})?$" error="hayError"></validacion>
-
-
-
-
 
 
 </form>
