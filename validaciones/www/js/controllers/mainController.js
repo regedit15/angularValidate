@@ -9,12 +9,12 @@ app.controller('mainController', [ '$scope', '$state',
        }
 
        $scope.errorPrecio = function() {
-           return !$scope.form.cantidad.$valid && $scope.form.cantidad.$dirty;
+           return ($scope.form.cantidad.$invalid && $scope.form.cantidad.$dirty) || $scope.cantidadInvalida;
        }
 
        $scope.validarCantidadMaxima = function(cantidad) {
             //este nombre, "cantidadInvalida" tiene que ser el mismo que esta en messages.html
-            $scope.form.cantidad.$error.cantidadInvalida = ((cantidad >= 1000) && $scope.form.cantidad.$dirty);
+            $scope.cantidadInvalida = cantidad >= 1000;
         }
 
         $scope.volver = function(cantidad) {

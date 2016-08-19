@@ -18,7 +18,7 @@
 	<div
 		class="form-group has-feedback"
 		style="max-width: 254px;margin: auto;"
-		ng-class="{'has-success' : successPrecio(), 'has-error' : errorPrecio() || form.cantidad.$error.cantidadInvalida}">
+		ng-class="{'has-success' : successPrecio(), 'has-error' : errorPrecio()}">
 		
 		<label>Precio</label>
 
@@ -35,16 +35,15 @@
 
 		<span
 			class="glyphicon form-control-feedback"
-			ng-class="{'glyphicon-ok' : successPrecio(), 'glyphicon-remove' : errorPrecio() || form.cantidad.$error.cantidadInvalida}"></span>
+			ng-class="{'glyphicon-ok' : successPrecio(), 'glyphicon-remove' : errorPrecio()}"></span>
 	</div>
 
 	<div
-		style="max-width: 254px; margin: auto;"
+		style="max-width: 254px;margin: auto;"
 		ng-messages="form.cantidad.$error"
-		ng-if="form.cantidad.$dirty || form.cantidad.$touched">
+		ng-if="form.cantidad.$touched || form.cantidad.$dirty">
 
 		<div ng-include="'messages.html'"></div>
 	</div>
-
 
 </form>
