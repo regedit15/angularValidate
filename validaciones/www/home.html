@@ -53,4 +53,35 @@
 		<i class="fa fa-check fa-fw"></i> Guardar
 	</button>
 
+<br>
+<br>
+<br>
+
+<div> hayError: {{hayError}}</div>
+
+	<div
+		class="form-group has-feedback"
+		style="max-width: 254px;margin: auto;"
+		ng-class="{'has-success' : hayError == false, 'has-error' : hayError}">
+		
+		<label>Precio</label>
+
+		<input
+			name="numero"
+			class="form-control"
+			ng-model="numero"
+			> 
+
+				<span
+			class="glyphicon form-control-feedback"
+			ng-class="{'glyphicon-ok' : hayError == false, 'glyphicon-remove' : hayError}"></span>
+	</div>
+
+	<validacion valor="numero" minlength="3" maxlength="6" pattern="^[0-9]+(\.[0-9]{1,2})?$" error="hayError"></validacion>
+
+
+
+
+
+
 </form>

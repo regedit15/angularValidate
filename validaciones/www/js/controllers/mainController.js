@@ -2,7 +2,11 @@ app.controller('mainController', [ '$scope', '$state',
 
    function($scope, $state) {
 
+
+       $scope.numero;
        $scope.cantidad;
+       $scope.hayError;
+
 
        $scope.successPrecio = function() {
            return $scope.form.cantidad.$valid && $scope.form.cantidad.$dirty;
@@ -29,7 +33,7 @@ app.controller('mainController', [ '$scope', '$state',
             $state.go('inicio');
          }
 
-         
+
      }
 
  }]);
