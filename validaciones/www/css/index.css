@@ -4,19 +4,6 @@ html, body {
 	height: 100%
 }
 
-.titulo {
-	margin-bottom: 2px;
-}
-
-.input {
-	width: 150px;
-}
-
-.precio {
-	text-align: center;
-	margin-bottom: 0px;
-}
-
 input {
 	text-align: center;
 }
@@ -30,25 +17,12 @@ input {
 	margin: auto;
 }
 
-#divVerde {
-	max-width: 142px;
-	min-height: 35px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 7px;
-	padding-bottom: 7px;
-}
-
-#grilla {
-	padding: 0px;
-}
-
-.acercaDe {
+.medio {
 	display: table-cell;
 	vertical-align: middle;
 }
 
-#contenedor {
+.contenedor {
 	display: table;
 	position: absolute;
 	height: 100%;
@@ -61,10 +35,6 @@ input {
 	width: 245px;
 	height: 105px;
 	margin: auto;
-}
-
-.form-group {
-	margin-bottom: 0px !important;
 }
 
 .powerBy {
@@ -84,10 +54,6 @@ input {
 	font-size: 16px;
 	text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
 	text-align: center;
-}
-
-.glyphicon {
-	margin-right: 5px;
 }
 
 .msjError {

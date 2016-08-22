@@ -25,10 +25,12 @@ function() {
 			function PatternException() {
 			}
 
+			var pattern = new RegExp(scope.validaciones.pattern);
+
 			scope.$watch('valor', function(newValue, oldValue) {
 
 				var validar = function() {
-					if (!new RegExp(scope.validaciones.pattern).test(scope.valor)) {
+					if (scope.validaciones.pattern != null && !pattern.test(scope.valor)) {
 						scope.mostrarPattern = true;
 						scope.mostrarMinlength = false;
 						scope.mostrarMaxlength = false;
