@@ -2,8 +2,8 @@
 <div style="text-align: center;">Este es un ejemplo de
 	validaci&oacute;n en AngularJs.</div>
 
-<div style="text-align: center;">Este input posee cinco
-	validaciones:</div>
+<div style="text-align: center;">Este input posee cuatro
+	validaciones customizables:</div>
 <br>
 <ul>
 	<li>Required</li>
@@ -24,14 +24,11 @@
 
 		<label>Precio</label> <input
 			placeholder="Ingrese un precio"
-			name="numero"
 			class="form-control"
 			ng-model="numero"> <span
 			class="glyphicon form-control-feedback"
 			ng-class="{'glyphicon-ok' : estadoForm == 1, 'glyphicon-remove' :  estadoForm == -1}"></span>
-	</div>
 
-	<div style="max-width: 254px; margin: auto;">
 		<validacion
 			valor="numero"
 			validaciones="validaciones"
