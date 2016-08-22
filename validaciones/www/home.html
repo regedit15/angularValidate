@@ -20,29 +20,27 @@
 	<div
 		class="form-group has-feedback"
 		style="max-width: 254px; margin: auto;"
-		ng-class="{'has-success' :  hayError == 1, 'has-error' : hayError == -1}">
+		ng-class="{'has-success' :  estadoForm == 1, 'has-error' : estadoForm == -1}">
 
 		<label>Precio</label> <input
 			name="numero"
 			class="form-control"
 			ng-model="numero"> <span
 			class="glyphicon form-control-feedback"
-			ng-class="{'glyphicon-ok' : hayError == 1, 'glyphicon-remove' :  hayError == -1}"></span>
+			ng-class="{'glyphicon-ok' : estadoForm == 1, 'glyphicon-remove' :  estadoForm == -1}"></span>
 	</div>
 
 	<div style="max-width: 254px; margin: auto;">
 		<validacion
 			valor="numero"
-			minlength="3"
-			maxlength="6"
-			pattern="^[0-9]+(\.[0-9]{1,2})?$"
-			error="hayError"></validacion>
+			validaciones="validaciones"
+			error="estadoForm"></validacion>
 	</div>
 
 	<button
 		type="submit"
 		ng-click="guardar()"
-		ng-disabled="hayError == -1 || hayError == 0 "
+		ng-disabled="estadoForm == -1 || estadoForm == 0 "
 		class="btn btn-success botonGuardar">
 		<i class="fa fa-check fa-fw"></i> Guardar
 	</button>

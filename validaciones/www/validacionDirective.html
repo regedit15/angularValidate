@@ -1,11 +1,17 @@
 <div>
+	
+	<div ng-if="error == -1">
+		<div
+			ng-if="mostrarMinlength"
+			class="msjError">{{validaciones.msj_minlength}}</div>
 
-	<div ng-if="mostrarMinlength" class="msjError">Numero muy chico2
+		<div
+			ng-if="mostrarMaxlength"
+			class="msjError">{{validaciones.msj_maxlength}}</div>
+
+		<div
+			ng-if="mostrarPattern"
+			class="msjError">{{validaciones.msj_pattern}}</div>
 	</div>
-
-	<div ng-if="mostrarMaxlength" class="msjError">Numero muy
-		grande</div>
-
-	<div ng-if="mostrarPattern" class="msjError">Pattern incorrecto</div>
-
+	
 </div>

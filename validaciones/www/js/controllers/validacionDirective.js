@@ -7,17 +7,14 @@ function() {
 		replace : true,
 		scope : {
 			'valor' : '=',
-			'minlength' : '=',
-			'maxlength' : '=',
-			'pattern' : '@',
+			'validaciones' : '=',
 			'error' : '=',
 		},
 
-		link : function(scope, element, attrs) {
+		// http://emailregex.com/
+		// ^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$
 
-			scope.mostrarMinlength;
-			scope.mostrarMaxlength;
-			scope.mostrarPattern;
+		link : function(scope, element, attrs) {
 
 			function MinLengthException() {
 			}
@@ -31,21 +28,21 @@ function() {
 			scope.$watch('valor', function(newValue, oldValue) {
 
 				var validar = function() {
-					if (!new RegExp(scope.pattern).test(scope.valor)) {
+					if (!new RegExp(scope.validaciones.pattern).test(scope.valor)) {
 						scope.mostrarPattern = true;
 						scope.mostrarMinlength = false;
 						scope.mostrarMaxlength = false;
 						throw new PatternException();
 					}
 
-					if (scope.valor.length < scope.minlength) {
+					if (scope.validaciones.minlength != null && scope.valor.length < scope.validaciones.minlength) {
 						scope.mostrarMinlength = true;
 						scope.mostrarPattern = false;
 						scope.mostrarMaxlength = false;
 						throw new MinLengthException();
 					}
 
-					if (scope.valor.length > scope.maxlength) {
+					if (scope.validaciones.maxlength != null && scope.valor.length > scope.validaciones.maxlength) {
 						scope.mostrarMaxlength = true;
 						scope.mostrarMinlength = false;
 						scope.mostrarPattern = false;
